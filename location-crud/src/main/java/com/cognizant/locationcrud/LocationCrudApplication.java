@@ -1,4 +1,4 @@
-package com.cognizant.productcrud;
+package com.cognizant.locationcrud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class ProductCrudApplication {
+public class LocationCrudApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductCrudApplication.class, args);
+		SpringApplication.run(LocationCrudApplication.class, args);
 	}
 
 }

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: location-crud
+  jpa:
+    database: MySQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: mysql
+    url: jdbc:mysql://database-1.cpi0qs5lqerp.us-east-1.rds.amazonaws.com:3306/ProductAvailability
+    username: admin
+    password: password
+    driverClassName: com.mysql.jdbc.Driver
