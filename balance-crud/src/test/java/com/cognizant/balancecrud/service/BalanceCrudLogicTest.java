@@ -1,7 +1,7 @@
 package com.cognizant.balancecrud.service;
 
 import com.cognizant.balancecrud.exception.BalanceNotFoundException;
-import com.cognizant.balancecrud.model.Balance;
+import com.cognizant.balancecrud.model.BalanceDB;
 import com.cognizant.balancecrud.repository.BalanceRepo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,14 +26,14 @@ public class BalanceCrudLogicTest {
 
     @Test
     public void getAll_ShouldCallRepo(){
-        List<Balance> expected = Arrays.asList(
-                new Balance(1L, 1, 1L, 2L),
-                new Balance (2L, 1, 1L, 1L)
+        List<BalanceDB> expected = Arrays.asList(
+                new BalanceDB(1L, 1, 1L, 2L),
+                new BalanceDB(2L, 1, 1L, 1L)
         );
 
         when(balanceRepo.findAll()).thenReturn(expected);
 
-        List<Balance> actual = balanceService.findAll();
+        List<BalanceDB> actual = balanceService.findAll();
 
         verify(balanceRepo).findAll();
         assertEquals(expected, actual);
@@ -43,10 +43,10 @@ public class BalanceCrudLogicTest {
     @Test
     public void getBalanceById_CallsRepoReturnsBalance() throws BalanceNotFoundException {
 
-        Balance expected = new Balance(1L, 1, 1L, 1L);
+        BalanceDB expected = new BalanceDB(1L, 1, 1L, 1L);
         when(balanceRepo.findById(1L)).thenReturn(Optional.of(expected));
 
-        Balance actual = balanceService.getBalanceById(1L);
+        BalanceDB actual = balanceService.getBalanceById(1L);
         assertEquals(expected, actual);
         verify(balanceRepo).findById(1L);
     }
@@ -60,8 +60,8 @@ public class BalanceCrudLogicTest {
 
     @Test
     public void putBalance_SavesToRepository(){
-        Balance input = new Balance(null, 2, 1L, 1L);
-        Balance expected = new Balance(1L, 2, 1L, 1L);
+        BalanceDB input = new BalanceDB(null, 2, 1L, 1L);
+        BalanceDB expected = new BalanceDB(1L, 2, 1L, 1L);
 
         balanceService.putBalance(1L, input);
         verify(balanceRepo).save(expected);
@@ -69,32 +69,32 @@ public class BalanceCrudLogicTest {
 
     @Test
     public void putBalance_ReturnsRecord(){
-        Balance input = new Balance(null, 2, 1L, 1L);
-        Balance expected = new Balance(1L, 2, 1L, 1L);
+        BalanceDB input = new BalanceDB(null, 2, 1L, 1L);
+        BalanceDB expected = new BalanceDB(1L, 2, 1L, 1L);
 
         when(balanceRepo.save(expected)).thenReturn(expected);
 
-        Balance actual = balanceService.putBalance(1L, input);
+        BalanceDB actual = balanceService.putBalance(1L, input);
         assertEquals(expected, actual);
     }
 
     @Test
     public void patchBalance_updatesBalance() throws BalanceNotFoundException {
-        Balance input = new Balance(null, 1, 1L, 1L);
-        Balance fromRepo = new Balance(1L, 0, 1L, 1L);
-        Balance expected = new Balance(1L, 1, 1L, 1L);
+        BalanceDB input = new BalanceDB(null, 1, 1L, 1L);
+        BalanceDB fromRepo = new BalanceDB(1L, 0, 1L, 1L);
+        BalanceDB expected = new BalanceDB(1L, 1, 1L, 1L);
 
         when(balanceRepo.findById(1L)).thenReturn(Optional.of(fromRepo));
         when(balanceRepo.save(expected)).thenReturn(expected);
 
-        Balance actual = balanceService.patchBalance(1L, input);
+        BalanceDB actual = balanceService.patchBalance(1L, input);
 
         assertEquals(expected, actual);
     }
 
     @Test
     public void deleteBalance_CallsRepo() throws BalanceNotFoundException {
-        Balance fromRepo = new Balance(1L, 1, 1L, 1L);
+        BalanceDB fromRepo = new BalanceDB(1L, 1, 1L, 1L);
         when(balanceRepo.findById(1L)).thenReturn(Optional.of(fromRepo));
 
         balanceService.deleteBalance(1L);

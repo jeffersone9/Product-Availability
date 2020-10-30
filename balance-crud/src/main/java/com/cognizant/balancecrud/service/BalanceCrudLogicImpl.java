@@ -1,7 +1,7 @@
 package com.cognizant.balancecrud.service;
 
 import com.cognizant.balancecrud.exception.BalanceNotFoundException;
-import com.cognizant.balancecrud.model.Balance;
+import com.cognizant.balancecrud.model.BalanceDB;
 import com.cognizant.balancecrud.repository.BalanceRepo;
 import org.springframework.stereotype.Service;
 
@@ -18,13 +18,13 @@ public class BalanceCrudLogicImpl implements BalanceCrudLogic {
     }
 
     @Override
-    public List<Balance> findAll() {
+    public List<BalanceDB> findAll() {
         return balanceRepo.findAll();
     }
 
     @Override
-    public Balance getBalanceById(long id) throws BalanceNotFoundException {
-        Optional<Balance> optional = balanceRepo.findById(id);
+    public BalanceDB getBalanceById(long id) throws BalanceNotFoundException {
+        Optional<BalanceDB> optional = balanceRepo.findById(id);
         if(optional.isPresent()){
             return optional.get();
         }
@@ -32,29 +32,29 @@ public class BalanceCrudLogicImpl implements BalanceCrudLogic {
     }
 
     @Override
-    public Balance putBalance(long id, Balance balance) {
+    public BalanceDB putBalance(long id, BalanceDB balanceDB) {
 
-        balance.setId(id);
-        return balanceRepo.save(balance);
+        balanceDB.setId(id);
+        return balanceRepo.save(balanceDB);
     }
 
     @Override
-    public Balance patchBalance(long id, Balance balance) throws BalanceNotFoundException {
-        Optional<Balance> optional = balanceRepo.findById(id);
+    public BalanceDB patchBalance(long id, BalanceDB balanceDB) throws BalanceNotFoundException {
+        Optional<BalanceDB> optional = balanceRepo.findById(id);
         if(optional.isEmpty()){
             throw new BalanceNotFoundException();
         }
 
-        Balance balanceUpdate = optional.get();
+        BalanceDB balanceUpdate = optional.get();
 
-        balanceUpdate.setBalance(balance.getBalance());
+        balanceUpdate.setBalance(balanceDB.getBalance());
 
         return balanceRepo.save(balanceUpdate);
     }
 
     @Override
     public void deleteBalance(long id) throws BalanceNotFoundException {
-        Optional<Balance> optional = balanceRepo.findById(id);
+        Optional<BalanceDB> optional = balanceRepo.findById(id);
         if(optional.isEmpty()){
             throw new BalanceNotFoundException();
         }

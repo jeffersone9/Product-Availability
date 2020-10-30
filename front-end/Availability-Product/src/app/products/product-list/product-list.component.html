@@ -1,0 +1,13 @@
+<div class="row">
+    <ul class="list-group">
+        <li class="list-group-item"
+        *ngFor="let product of products">
+            <div class="row">
+                {{ product.productName }}
+            </div>
+            <div>
+                <img src="assets/products/{{product.productName}}.jpg"/>
+            </div>
+        </li>
+    </ul>
+</div>

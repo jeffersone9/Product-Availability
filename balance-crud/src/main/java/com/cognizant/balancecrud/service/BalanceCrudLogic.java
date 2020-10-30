@@ -1,18 +1,18 @@
 package com.cognizant.balancecrud.service;
 
 import com.cognizant.balancecrud.exception.BalanceNotFoundException;
-import com.cognizant.balancecrud.model.Balance;
+import com.cognizant.balancecrud.model.BalanceDB;
 
 import java.util.List;
 
 public interface BalanceCrudLogic {
-    List<Balance> findAll();
+    List<BalanceDB> findAll();
 
-    Balance getBalanceById(long id) throws BalanceNotFoundException;
+    BalanceDB getBalanceById(long id) throws BalanceNotFoundException;
 
-    Balance putBalance(long id, Balance input);
+    BalanceDB putBalance(long id, BalanceDB input);
 
-    Balance patchBalance(long id, Balance input) throws BalanceNotFoundException;
+    BalanceDB patchBalance(long id, BalanceDB input) throws BalanceNotFoundException;
 
     void deleteBalance(long l) throws BalanceNotFoundException;
 }

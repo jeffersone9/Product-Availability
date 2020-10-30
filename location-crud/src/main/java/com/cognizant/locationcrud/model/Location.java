@@ -16,6 +16,6 @@ public class Location {
 
     @Id
     private Long id;
-    private String name;
-    private int zipcode;
+    private String locationName;
+    private String zipcode;
 }

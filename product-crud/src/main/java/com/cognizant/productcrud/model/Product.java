@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Product {
     @Id
     private Long id;
-    private String name;
+    private String productName;
     @Embedded
     private Department department;
 
