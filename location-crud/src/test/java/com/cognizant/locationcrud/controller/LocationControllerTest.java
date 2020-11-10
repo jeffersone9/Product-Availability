@@ -31,8 +31,8 @@ public class LocationControllerTest {
     @Test
     public void getAll_CallsService(){
         List<Location> expected = Arrays.asList(
-                new Location(1L, "Baton Rouge", 70791),
-                new Location(2L, "Ruston", 71270));
+                new Location(1L, "Baton Rouge", "70791"),
+                new Location(2L, "Ruston", "71270"));
 
         when(locationService.getAll()).thenReturn(expected);
         ResponseEntity<List<Location>> actual = locationController.getAllLocations();
@@ -44,7 +44,7 @@ public class LocationControllerTest {
 
     @Test
     public void getLocationById_CallsServiceAndReturnsOk() throws LocationNotFoundException {
-        Location expected = new Location(1L, "Baton Rouge", 70791);
+        Location expected = new Location(1L, "Baton Rouge", "70791");
         when(locationService.getLocationById(1L)).thenReturn(expected);
 
         ResponseEntity<Location> actual = locationController.getLocationById(1L);

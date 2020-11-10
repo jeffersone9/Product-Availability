@@ -33,8 +33,8 @@ public class LocationCrudLogicImplTest {
     @Test
     public void getAll_CallsRepo(){
         List<Location> expected = Arrays.asList(
-                new Location(1L, "Baton Rouge", 70791),
-                new Location(2L, "Ruston", 71270)
+                new Location(1L, "Baton Rouge", "70791"),
+                new Location(2L, "Ruston", "71270")
         );
 
         when(locationRepo.findAll()).thenReturn(expected);
@@ -46,7 +46,7 @@ public class LocationCrudLogicImplTest {
 
     @Test
     public void getLocationById_ReturnsLocation() throws LocationNotFoundException {
-        Location expected = new Location(1L, "Baton Rouge", 70791);
+        Location expected = new Location(1L, "Baton Rouge", "70791");
         when(locationRepo.findById(1L)).thenReturn(Optional.of(expected));
 
         Location actual = locationService.getLocationById(1L);

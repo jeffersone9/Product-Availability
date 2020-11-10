@@ -11,5 +11,9 @@
         <module name="product-crud.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gateway.main" target="11" />
+      <module name="gateway.test" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
