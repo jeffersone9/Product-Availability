@@ -13,33 +13,26 @@ import { ProductService } from '../product.service';
 export class ProductAvailableComponent implements OnInit {
 
   balances : Balance[];
-  available: Product[] = [];
-  private productService: ProductService;
-
-  constructor(private balanceService: BalanceService, private service:ProductService) { 
-    this.productService = service;
+  loading : boolean = true;
+  location : number = 1;
+  constructor(private balanceService: BalanceService) { 
+    
   }
 
   ngOnInit(): void {
+    this.loading = true;
     this.balanceService.getBalances().subscribe(
-      (response: any) => {
+      (response: Balance[]) => {
+          this.loading = false;
           this.balances = response;
-          this.balances.forEach(this.addToAvailable);
       }
     )
     
   }
 
-  addToAvailable(item:Balance){
-    console.log(item);
-    if(item.balance > 0){
-      this.productService.getProductsById(item.productId).subscribe(
-        (response:any) =>{
-          console.log(response);
-        }
-      )
-      //this.available.push(item.getProduct());
-    }
+  changeLocation(input: number){
+    this.location = input;
   }
+
 
 }

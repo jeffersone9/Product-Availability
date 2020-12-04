@@ -5,9 +5,12 @@
             <div class="row">
                 {{ product.productName }}
             </div>
-            <div>
-                <img src="assets/products/{{product.productName}}.jpg"/>
+            <div style="height:15em;width:15em">
+                <img src="assets/products/{{product.productName}}.jpg" style="width:100%; height:100%"/>
             </div>
         </li>
     </ul>
+    <p *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </p>
 </div>

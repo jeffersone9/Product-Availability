@@ -4,74 +4,42 @@ import { LocationService } from '../locations/location.service';
 import { ProductService } from '../products/product.service';
 import { Observable } from 'rxjs';
 export class Balance{
-    id: Number;
-    balance: Number;
-    productId: Number;
-    locationId: Number;
+    id: number;
+    balance: number;
+    productId: number;
+    locationId: number;
     product: Product;
     location: Location;
 
-    constructor(private locationService:LocationService, private productService:ProductService){
-        locationService.getLocationById(this.locationId).subscribe(
-            (response:any) =>{
-                this.location = response;
-            }
-        )
-
-        productService.getProductsById(this.productId).subscribe(
-            (response: any) => {
-                this.product = response;
-            }
-        )
+    constructor(id: number, balance: number,  product: Product, location: Location){
+        this.id = id;
+        this.balance = balance;
+        this.product = product;
+        this.location = location;
     }
 
     public getId():Number{
         return this.id;
     }
 
-    public setId(id:Number){
+    public setId(id:number){
         this.id = id;
     }
 
-    public getBalance():Number{
+    public getBalance():number{
         return this.balance;
     }
 
-    public setBalance(balance:Number){
+    public setBalance(balance:number){
         this.balance = balance;
     }
 
-    public getProductId():Number{
-        return this.productId;
-    }
-
-    public setProductId(product:Number){
-        this.productId = product;
-    }
-
-    public getLocationId():Number{
-        return this.locationId;
-    }
-
-    public setLocation(locationId:Number){
-        this.locationId = locationId;
-    }
-
     public getProduct():Product{
-        this.productService.getProductsById(this.productId).subscribe(
-            (response: Product) => {
-                return response;
-            }
-        );
-        return null;
+        
+        return this.product;
     }
 
     public getLocation():Location{
-        this.locationService.getLocationById(this.locationId).subscribe(
-            (response: Location) => {
-                return response;
-            }
-        );
-        return null;
+        return this.location;
     }
 }

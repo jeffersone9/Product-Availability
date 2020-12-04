@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import java.util.Random;
 
 @SpringBootApplication
 @EnableFeignClients
@@ -24,15 +25,17 @@ public class BalanceCrudApplication implements CommandLineRunner {
 
 		balanceRepo.deleteAllInBatch();
 
-		balanceRepo.save(new BalanceDB(1L, 1, 1L, 1L));
-		balanceRepo.save(new BalanceDB(2L, 1, 1L, 2L));
-		balanceRepo.save(new BalanceDB(3L, 1, 1L, 3L));
-		balanceRepo.save(new BalanceDB(4L, 1, 2L, 1L));
-		balanceRepo.save(new BalanceDB(5L, 1, 2L, 2L));
-		balanceRepo.save(new BalanceDB(6L, 1, 2L, 3L));
-		balanceRepo.save(new BalanceDB(7L, 1, 3L, 1L));
-		balanceRepo.save(new BalanceDB(8L, 1, 3L, 2L));
-		balanceRepo.save(new BalanceDB(9L, 1, 3L, 3L));
+		int productSize = 26;
+		int locationSize = 3;
+		Random rand = new Random();
+		Long index = 1L;
+		for(Long x = 1L; x <= productSize; x++){
+			for(Long y = 1L; y <= locationSize; y++){
+				balanceRepo.save(new BalanceDB(index, rand.nextInt(50), x, y));
+				index++;
+			}
+		}
+
 
 	}
 }

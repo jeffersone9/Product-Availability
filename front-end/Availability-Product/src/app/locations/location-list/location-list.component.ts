@@ -10,11 +10,14 @@ import { LocationService } from '../location.service';
 export class LocationListComponent implements OnInit {
 
   locations: Location[];
+  loading : boolean = true;
   constructor(private locationService:LocationService) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.locationService.getLocations().subscribe(
       (response:any) =>{
+        this.loading = false;
         this.locations = response;
       }
     )
