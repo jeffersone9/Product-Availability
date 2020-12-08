@@ -25,13 +25,14 @@ phases:
       - gradle build
       - cd ..
 artifacts:
-  files:
-    - location-crud/build/libs/location-crud-0.0.1-SNAPSHOT.jar
-  name: location_crud
   secondary-artifacts:
+    location_crud:
+      files:
+        - location-crud/build/libs/location-crud-0.0.1-SNAPSHOT.jar
+      name: location_crud
     product_crud:
       files:
-        - procut-crud/build/libs/product-crud-0.0.1-SNAPSHOT.jar
+        - product-crud/build/libs/product-crud-0.0.1-SNAPSHOT.jar
       name: product_crud
     balance-crud:
       files:
