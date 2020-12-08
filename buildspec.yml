@@ -34,7 +34,7 @@ artifacts:
       files:
         - product-crud/build/libs/product-crud-0.0.1-SNAPSHOT.jar
       name: product_crud
-    balance-crud:
+    balance_crud:
       files:
         - balance-crud/build/libs/balance-crud-0.0.1-SNAPSHOT.jar
       name: balance_crud
