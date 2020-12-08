@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - apt update
+      - apt-get install openjdk-11-jdk -y
+      - java -version
+      - wget https://services.gradle.org/distributions/gradle-6.6-bin.zip -P /tmp
+      - unzip -d /opt/gradle /tmp/gradle-*.zip
+      - ls /opt/gradle/gradle-6.6
+      - export GRADLE_HOME=/opt/gradle/gradle-6.6
+      - export PATH=${GRADLE_HOME}/bin:${PATH}
+      - gradle -v
+
+  build:
+    commands:
+      - cd location-crud
+      - gradle build
+      - cd ..
+      - cd product-crud
+      - gradle build
+      - cd ..
+      - cd balance-crud
+      - gradle build
+      - cd ..
