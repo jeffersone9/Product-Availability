@@ -4,7 +4,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.cognizant.balancecrud.controller.BalanceController;
 
-public class ListBalances implements RequestHandler<Object, String> {
+public class ListBalances implements RequestHandler{
 
     private BalanceController balanceController;
 

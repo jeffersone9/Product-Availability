@@ -4,7 +4,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.cognizant.locationcrud.controller.LocationController;
 
-public class ListLocations implements RequestHandler<Object, String> {
+public class ListLocations implements RequestHandler{
 
     private LocationController locationController;
 
