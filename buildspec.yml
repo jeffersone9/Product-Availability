@@ -29,12 +29,15 @@ artifacts:
     location_crud:
       files:
         - location-crud/build/distributions/location-crud-0.0.1-SNAPSHOT.zip
+      discard-paths: yes
       name: location_crud
     product_crud:
       files:
         - product-crud/build/distributions/product-crud-0.0.1-SNAPSHOT.zip
+      discard-paths: yes
       name: product_crud
     balance_crud:
       files:
         - balance-crud/build/distributions/balance-crud-0.0.1-SNAPSHOT.zip
+      discard-paths: yes
       name: balance_crud
