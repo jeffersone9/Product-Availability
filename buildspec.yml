@@ -17,12 +17,15 @@ phases:
     commands:
       - cd location-crud
       - gradle buildZip
+      - chmod 755 build/distributions/location-crud-0.0.1-SNAPSHOT.zip
       - cd ..
       - cd product-crud
       - gradle buildZip
+      - chmod 755 build/distributions/product-crud-0.0.1-SNAPSHOT.zip
       - cd ..
       - cd balance-crud
       - gradle buildZip
+      - chmod 755 build/distributions/product-crud-0.0.1-SNAPSHOT.zip
       - cd ..
 artifacts:
   secondary-artifacts:
