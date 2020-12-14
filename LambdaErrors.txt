@@ -1,0 +1,4 @@
+Things I've tried for ClassNotFound Exception:
+-Removed zip paths using the discard-paths option in buildspec.yml
+-Changed build artifact from jar to zip using buildZip
+-Changed the type for RequestHandler implemented
