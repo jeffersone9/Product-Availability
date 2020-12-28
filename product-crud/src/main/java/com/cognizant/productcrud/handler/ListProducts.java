@@ -5,16 +5,12 @@ import com.amazonaws.serverless.proxy.model.AwsProxyRequest;
 import com.amazonaws.serverless.proxy.model.AwsProxyResponse;
 import com.amazonaws.serverless.proxy.spring.SpringBootLambdaContainerHandler;
 import com.amazonaws.services.lambda.runtime.Context;
-import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
 import com.cognizant.productcrud.ProductCrudApplication;
-import com.cognizant.productcrud.repository.ProductRepo;
-import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Map;
 
 public class ListProducts implements RequestStreamHandler {
 
@@ -25,7 +21,7 @@ public class ListProducts implements RequestStreamHandler {
             handler = SpringBootLambdaContainerHandler.getAwsProxyHandler(ProductCrudApplication.class);
         } catch(ContainerInitializationException e){
             e.printStackTrace();
-            throw new RuntimeException("Prod app failed to initialize", e);
+            throw new RuntimeException("Could not init location App", e);
         }
     }
 

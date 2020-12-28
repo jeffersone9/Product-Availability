@@ -1,7 +1,6 @@
 package com.cognizant.balancecrud.controller;
 
-import com.cognizant.balancecrud.client.LocationClient;
-import com.cognizant.balancecrud.client.ProductClient;
+
 import com.cognizant.balancecrud.exception.BalanceNotFoundException;
 import com.cognizant.balancecrud.model.Balance;
 import com.cognizant.balancecrud.model.BalanceDB;

@@ -1,0 +1,31 @@
+<button mat-button [matMenuTriggerFor]="menu">Check nearby locations</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="changeDistance('10')">10 Miles</button>
+    <button mat-menu-item (click)="changeDistance('20')">20 Miles</button>
+    <button mat-menu-item (click)="changeDistance('30')">30 Miles</button>
+</mat-menu>
+<div class="row">
+    <ul class="list-group"
+    *ngFor="let balance of balances">
+        <li class="list-group-item">
+            <div class="row">
+                {{balance.product.productName}}
+            </div>
+            <div style="height:15em;width:15em">
+                <img src="assets/products/{{balance.product.productName}}.jpg" style="width:100%; height:100%"/>
+            </div>
+            <div class="row" *ngIf="balance.balance > 0">
+                {{balance.balance}} left
+            </div> 
+            <div class="row" *ngIf="balance.balance == 0">
+                Out of stock
+            </div> 
+            <div class="row">
+                Located in {{balance.location.locationName}}
+            </div>
+        </li>
+    </ul>
+    <p *ngIf="loading">
+        <mat-spinner></mat-spinner>
+    </p>
+</div>

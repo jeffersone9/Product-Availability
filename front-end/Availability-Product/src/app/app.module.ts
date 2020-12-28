@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatMenuModule } from '@angular/material/menu';
 import { ProductDetailComponent } from './products/product-detail/product-detail.component';
+import { ProductZipcodeComponent } from './products/product-zipcode/product-zipcode.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ProductDetailComponent } from './products/product-detail/product-detail
     LocationListComponent,
     NavbarComponent,
     HomeComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductZipcodeComponent
   ],
   imports: [
     BrowserModule,

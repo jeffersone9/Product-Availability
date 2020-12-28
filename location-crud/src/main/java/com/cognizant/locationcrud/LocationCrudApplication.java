@@ -6,10 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-@EnableEurekaClient
 public class LocationCrudApplication implements CommandLineRunner {
 
 	@Autowired
@@ -23,7 +21,10 @@ public class LocationCrudApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		locationRepo.deleteAllInBatch();
 		locationRepo.save(new Location(1L, "Ruston", "71270"));
-		locationRepo.save(new Location(2L, "Baton Rouge", "70791"));
+		locationRepo.save(new Location(2L, "Zachary", "70791"));
 		locationRepo.save(new Location(3L, "Irving", "75014"));
+		locationRepo.save(new Location(4L, "Grambling", "71245"));
+		locationRepo.save(new Location(5L, "Baton Rouge", "70807"));
+		locationRepo.save(new Location(6L, "Dallas", "75394"));
 	}
 }
