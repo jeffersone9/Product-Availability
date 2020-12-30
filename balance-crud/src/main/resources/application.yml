@@ -12,5 +12,9 @@ spring:
     username: admin
     password: password
     driverClassName: com.mysql.jdbc.Driver
+  memcached.cache:
+    servers: product-availability.qwn7sl.0001.use1.cache.amazonaws.com:11211
+    provider: aws
+    experiation: 86400
 server:
   port: 8083
