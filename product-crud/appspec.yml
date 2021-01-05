@@ -5,7 +5,7 @@ files:
     destination: /var/crud/
 hooks:
   ApplicationStop:
-    -location: scripts/stop_server.sh
+    - location: scripts/stop_server.sh
       timeout: 300
       runas: root
   BeforeInstall:
