@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: location-crud-0.0.1-SNAPSHOT.zip
+  - source: location-crud-0.0.1-SNAPSHOT.jar
     destination: /var/crud/
 hooks:
   ApplicationStop:
