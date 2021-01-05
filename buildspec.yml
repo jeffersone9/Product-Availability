@@ -28,20 +28,23 @@ artifacts:
       files:
         - location-crud/build/libs/location-crud-0.0.1-SNAPSHOT.jar
         - location-crud/appspec.yml
-        - location-crud/scripts/*
+        - location-crud/scripts/start_server.sh
+        - location-crud/scripts/stop_server.sh
       discard-paths: yes
       name: location_crud
     product_crud:
       files:
         - product-crud/build/libs/product-crud-0.0.1-SNAPSHOT.jar
         - product-crud/appspec.yml
-        - product-crud/scripts/*
+        - product-crud/scripts/sart_server.sh
+        - product-crud/scripts/stop_server.sh
       discard-paths: yes
       name: product_crud
     balance_crud:
       files:
         - balance-crud/build/libs/balance-crud-0.0.1-SNAPSHOT.jar
         - balance-crud/appspec.yml
-        - balance-crud/scripts/*
+        - balance-crud/scripts/start_server.sh
+        - balance-crud/scripts/stop_server.sh
       discard-paths: yes
       name: balance_crud
