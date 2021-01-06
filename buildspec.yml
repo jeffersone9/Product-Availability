@@ -36,7 +36,7 @@ artifacts:
       files:
         - product-crud/build/libs/product-crud-0.0.1-SNAPSHOT.jar
         - product-crud/appspec.yml
-        - product-crud/scripts/sart_server.sh
+        - product-crud/scripts/start_server.sh
         - product-crud/scripts/stop_server.sh
       discard-paths: yes
       name: product_crud
