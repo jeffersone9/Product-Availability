@@ -30,6 +30,7 @@ artifacts:
         - location-crud/appspec.yml
         - location-crud/scripts/start_server.sh
         - location-crud/scripts/stop_server.sh
+        - location-crud/scripts/clean.sh
       discard-paths: yes
       name: location_crud
     product_crud:
@@ -38,6 +39,7 @@ artifacts:
         - product-crud/appspec.yml
         - product-crud/scripts/start_server.sh
         - product-crud/scripts/stop_server.sh
+        - product-crud/scripts/clean.sh
       discard-paths: yes
       name: product_crud
     balance_crud:
@@ -46,5 +48,6 @@ artifacts:
         - balance-crud/appspec.yml
         - balance-crud/scripts/start_server.sh
         - balance-crud/scripts/stop_server.sh
+        - balance-crud/scripts/clean.sh
       discard-paths: yes
       name: balance_crud
