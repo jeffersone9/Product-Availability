@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 
 export class ProductService {
 
-  baseUrl: string = "http://localhost:8082/products/"
+  baseUrl: string = "http://34.207.143.25:8082/products/"
   productList: Product[];
 
   constructor(private http: HttpClient) { }

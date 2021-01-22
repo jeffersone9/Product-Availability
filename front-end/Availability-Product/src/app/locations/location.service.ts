@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LocationService {
 
-  baseUrl: string = "http://localhost:8081/locations/";
+  baseUrl: string = "http://54.167.119.38:8081/locations/";
   constructor(private http: HttpClient) { }
 
   getLocations(){

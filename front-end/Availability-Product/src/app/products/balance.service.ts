@@ -14,7 +14,7 @@ import { Zipcode } from '../shared/zipcode.model';
 })
 export class BalanceService {
 
-  baseUrl: string = "http://localhost:8083/balances/"
+  baseUrl: string = "http://3.89.38.248:8083/balances/"
   constructor(private http: HttpClient, private productService: ProductService,
     private locationService: LocationService, private zipcodeService: ZipcodeService) { }
 
